@@ -1,0 +1,84 @@
+﻿@model WebApplication1.Models.Recipe
+
+
+@{
+    ViewData["Title"] = "Yummy Cookbook";
+}
+
+<head>
+    <style>
+        th { background-color: #009999; }
+        td { background-color: powderblue; }
+        table, th, td { border: 1px solid; }
+        table { border-collapse: collapse; }
+    </style>
+</head>
+
+
+<h2>Recipe details</h2>
+
+@if ((bool)@ViewData["isCorrectId"])
+{
+    <table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Difficulty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfLikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Process)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipsAndTricks)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Difficulty)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.NumberOfLikes)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Ingredients)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Process)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.TipsAndTricks)
+                </td>
+            </tr>
+    </tbody>
+    </table>
+}
+else
+{
+    <h3>Id of recipe is wrong</h3>
+}

@@ -1,0 +1,68 @@
+﻿
+@model WebApplication1.Models.Recipe
+
+@{
+	ViewData["Title"] = "Create new recipe";
+}
+
+<head>
+    <style>
+        th { background-color: #009999; }
+        td { background-color: powderblue; }
+        table, th, td { border: 1px solid; }
+        table { border-collapse: collapse; }
+    </style>
+</head>
+
+<h2> Create\Edit new recipe</h2>
+
+
+
+@using (Html.BeginForm("Index", "YummyCookbook", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>@Html.DisplayFor(m => m.Id)</td>
+            <td>@Html.TextBoxFor(m => m.Id)</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@Html.DisplayFor(m => m.Name)</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td>@Html.DisplayFor(m => m.Time)</td>
+            <td>@Html.TextBoxFor(m => m.Time)</td>
+        </tr>
+        <tr>
+            <td>Difficulty</td>
+            <td>@Html.DisplayFor(m => m.Difficulty)</td>
+            <td>@Html.TextBoxFor(m => m.Difficulty)</td>
+        </tr>
+        <tr>
+            <td>Number of likes</td>
+            <td>@Html.DisplayFor(m => m.NumberOfLikes)</td>
+            <td>@Html.TextBoxFor(m => m.NumberOfLikes)</td>
+        </tr>
+        <tr>
+            <td>Ingredients</td>
+            <td>@Html.DisplayFor(m => m.Ingredients)</td>
+            <td>@Html.TextBoxFor(m => m.Ingredients)</td>
+        </tr>
+        <tr>
+            <td>Process</td>
+            <td>@Html.DisplayFor(m => m.Process)</td>
+            <td>@Html.TextBoxFor(m => m.Process)</td>
+        </tr>
+        <tr>
+            <td>Tips and tricks</td>
+            <td>@Html.DisplayFor(m => m.TipsAndTricks)</td>
+            <td>@Html.TextBoxFor(m => m.TipsAndTricks)</td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="submit" value="Submit form"/></td>
+        </tr>
+    </table>
+}
